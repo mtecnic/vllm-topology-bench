@@ -1,7 +1,7 @@
 set -u
 docker rm -f bench-smoke >/dev/null 2>&1
 docker run -d --name bench-smoke --gpus '"device=0"' \
-  -v /data/models:/app/models -v /home/waive5/.cache/huggingface:/root/.cache/huggingface \
+  -v /data/models:/app/models -v ~/.cache/huggingface:/root/.cache/huggingface \
   -p 9000:9000 vllm/vllm-openai:v0.21.0 \
   --model /app/models/QuantTrio-Qwen3.6-35B-A3B-AWQ --dtype auto \
   --max-model-len 8192 --gpu-memory-utilization 0.92 --max-num-seqs 256 \

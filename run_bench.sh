@@ -5,7 +5,7 @@ set -u
 BASE=/data/projects/vllm-topology-bench
 IMG=vllm/vllm-openai:v0.21.0
 MODEL=/app/models/QuantTrio-Qwen3.6-35B-A3B-AWQ
-MNT="-v /data/models:/app/models -v /home/waive5/.cache/huggingface:/root/.cache/huggingface"
+MNT="-v /data/models:/app/models -v ~/.cache/huggingface:/root/.cache/huggingface"
 # CONTROLLED constants held identical across topologies (only TP/replica count varies):
 COMMON="--model $MODEL --dtype auto --max-model-len 8192 --gpu-memory-utilization 0.92 --max-num-seqs 256 --max-num-batched-tokens 16384 --trust-remote-code"
 CONC="1 2 4 8 16 32 64 128"
