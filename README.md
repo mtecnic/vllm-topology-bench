@@ -76,4 +76,15 @@ Single run per point (no variance bars — trust the large, consistent trends). 
 
 ---
 
+## License
+
+[Apache-2.0](LICENSE). The harness, the methodology and the raw result files under
+`results/` are all free to reuse — if you rerun this on different hardware or a different
+interconnect, the numbers are the interesting part.
+
+Benchmarked with [vLLM](https://github.com/vllm-project/vllm) (Apache-2.0) serving an AWQ
+build of Qwen3.6-35B-A3B; neither is redistributed here.
+
+---
+
 <p align="center"><sub><b>Keywords:</b> vLLM · tensor parallelism · data parallelism · LLM serving · GPU inference throughput · RTX 3090 · KV cache · NVLink / PCIe · Mixture-of-Experts · AWQ quantization · Qwen · concurrency · tokens per second · self-hosted LLM · inference optimization</sub></p>
